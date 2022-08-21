@@ -15,6 +15,5 @@ CREATE TABLE pets (
     treatment_notes VARCHAR(255)
 );
 
-INSERT INTO pets (pets_name, date_of_birth, pet_type, contact_number, treatment_notes )
-VALUES ('Jerry', '01/05/2021', 'Cat', '07760589912', 'Needs stitches for small open wound');
+
 
