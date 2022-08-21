@@ -6,3 +6,6 @@ class Pet:
         self.contact_number = contact_number
         self.treatment_notes = treatment_notes
         self.id = id
+
+    def name_change(self):
+        self.pets_name = 'Jasper'

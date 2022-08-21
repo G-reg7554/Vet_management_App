@@ -23,23 +23,28 @@ def save(pet):
     pet.id = id                    
     return pet           
 
-def select(id):
-    pet = None
-    sql = "SELECT * FROM pets WHERE id = %s"  
-    values = [id] 
-    results = run_sql(sql, values)
+# def select(id):
+#     pet = None
+#     sql = "SELECT * FROM pets WHERE id = %s"  
+#     values = [id] 
+#     results = run_sql(sql, values)
 
-    if results:
-        result = results[0]
-        pet = Pet(result['pets_name'], result['date_of_birth'], result['pet_type'], result['contact_number'], result['treatment_notes'], result['id'] )
-    return pet     
+#     if results:
+#         result = results[0]
+#         pet = Pet(result['pets_name'], result['date_of_birth'], result['pet_type'], result['contact_number'], result['treatment_notes'], result['id'] )
+#     return pet     
 
 def delete_all():
     sql = "DELETE FROM pets" 
     run_sql(sql)
 
-def delete(id):
-    sql = "DELETE  FROM pets WHERE id = %s" 
-    values = [id]
-    run_sql(sql, values)
+# def delete(id):
+#     sql = "DELETE  FROM pets WHERE id = %s" 
+#     values = [id]
+#     run_sql(sql, values)
+
+# def update(pet):
+#     sql = "UPDATE pets SET (pets_name, date_of_birth, pet_type, contact_number, treatment_notes) = (%s, %s, %s, %s, %s) WHERE id = %s"
+#     values = [pet.pets_name, pet.date_of_birth, pet.pet_type, pet.contact_number, pet.treatment_notes, pet,id]
+#     run_sql(sql, values) 
 

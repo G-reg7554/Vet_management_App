@@ -21,22 +21,27 @@ def save(vet):
     vet.id = id                    
     return vet  
 
-def select(id):
-    vet = None
-    sql = "SELECT * FROM vets WHERE id = %s"  
-    values = [id] 
-    results = run_sql(sql, values)
+# def select(id):
+#     vet = None
+#     sql = "SELECT * FROM vets WHERE id = %s"  
+#     values = [id] 
+#     results = run_sql(sql, values)
 
-    if results:
-        result = results[0]
-        vet = Vet(result['full_name'], result['id'])
-    return vet  
+#     if results:
+#         result = results[0]
+#         vet = Vet(result['full_name'], result['id'])
+#     return vet
 
 def delete_all():
     sql = "DELETE  FROM vets" 
     run_sql(sql)
 
-def delete(id):
-    sql = "DELETE  FROM vets WHERE id = %s" 
-    values = [id]
-    run_sql(sql, values)
+# def delete(id):
+#     sql = "DELETE  FROM vets WHERE id = %s" 
+#     values = [id]
+#     run_sql(sql, values)
+
+# def update(vet):
+#     sql = "UPDATE pets SET (full_name) = (%s) WHERE id = %s"
+#     values = [vet.full_name, vet,id]
+#     run_sql(sql, values)

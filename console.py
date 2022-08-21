@@ -7,11 +7,6 @@ import repositories.vet_repository as vet_repository
 pet_repository.delete_all()
 vet_repository.delete_all()
 
-pet_result = pet_repository.select_all()
-vet_result = vet_repository.select_all()
-
-
-
 
 vet_1 = Vet("David Miller")
 vet_repository.save(vet_1)
@@ -25,7 +20,11 @@ pet_repository.save(pet_1)
 # vet_repository.select(vet_1.id)
 # pet_repository.select(pet_1.id)
 
+# pet_1.name_change()
+# pet_repository.update()
 
+pet_result = pet_repository.select_all()
+vet_result = vet_repository.select_all()
 
 for task in pet_result:
     print(task.__dict__)

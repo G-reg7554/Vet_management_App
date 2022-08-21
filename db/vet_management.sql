@@ -12,7 +12,8 @@ CREATE TABLE pets (
     date_of_birth VARCHAR(255),
     pet_type VARCHAR(255),
     contact_number VARCHAR(255),
-    treatment_notes VARCHAR(255)
+    treatment_notes VARCHAR(255),
+    vet_id INT NOT NULL REFERENCES vets(id)
 );
 
 
