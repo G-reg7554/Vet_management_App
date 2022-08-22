@@ -25,11 +25,9 @@ print(pet_1_but_with_the_db_id.__dict__)
 pet_result = pet_repository.select_all()
 vet_result = vet_repository.select_all()
 
-for task in pet_result:
-    print(task.__dict__)
+for pet in pet_result:
+    print(pet.__dict__)
 
-for task in vet_result:
-    print(task.__dict__)
+for pet in vet_result:
+    print(pet.__dict__)
 
-
-vet_repository.delete(vet_1.id)

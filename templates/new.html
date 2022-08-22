@@ -7,4 +7,11 @@
         <li><a href="/tasks"><p> Task </p></a></li>
     </ul>
 </header>
+{% for vet in vet_staff %}
+{{vet.full_name}}
+{% endfor %}
+
+{% for pet in pet_patient %}
+{{pet.pets_name}}
+{% endfor %}
 {% endblock %}
