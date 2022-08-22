@@ -1,4 +1,4 @@
-import pdb
+
 from models.vet import Vet
 from models.pet import Pet
 import repositories.pet_repository as pet_repository
@@ -7,15 +7,14 @@ import repositories.vet_repository as vet_repository
 pet_repository.delete_all()
 vet_repository.delete_all()
 
+# {name: "David Millar", id: None}
+vet_1 = Vet('David Miller')
+# {name: "David Millar", id: 4}
+vet_1_but_with_the_db_id = vet_repository.save(vet_1)
 
-vet_1 = Vet("David Miller")
-vet_repository.save(vet_1)
-
-pet_1 = Pet("Jerry", "01/05/2021", "Cat", "'07760589912'", "Needs stitches for open wound")
-pet_repository.save(pet_1)
-
-# pet_repository.delete(pet_1.id)
-# vet_repository.delete(vet_1.id)
+pet_1 = Pet('Jerry', '01/05/2021', 'Cat', '07564227790', 'Needs stitches for open wound', vet_1_but_with_the_db_id)
+pet_1_but_with_the_db_id = pet_repository.save(pet_1)
+print(pet_1_but_with_the_db_id.__dict__)
 
 # vet_repository.select(vet_1.id)
 # pet_repository.select(pet_1.id)
@@ -32,4 +31,5 @@ for task in pet_result:
 for task in vet_result:
     print(task.__dict__)
 
-pdb.set_trace()
+
+vet_repository.delete(vet_1.id)
