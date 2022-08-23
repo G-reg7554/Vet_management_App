@@ -7,8 +7,15 @@
     <title>Document</title>
 </head>
 <body>
-    {% block content %}
-
+    {% block body %}
+    <header>
+        <h1>Vet Manager</h1>
+        <ul>
+            <li><a href="/"><p> Home </p></a></li>
+            <li><a href="/pet"><p>Pets</p></a></li>
+            <li><a href="/vet"><p>Vets</p></a></li>
+        </ul>
+    </header>
     {% endblock %}
 </body>
 </html>

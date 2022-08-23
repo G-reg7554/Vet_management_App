@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect
 from controllers.pet_controller import pet_blueprint
 
 app = Flask(__name__)

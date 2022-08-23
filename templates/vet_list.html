@@ -1,17 +1,17 @@
 {% extends "base.html" %}
 
-{% block content %}
+{% block body %}
 <header>
+    <h1>Vet Manager</h1>
     <ul>
         <li><a href="/"><p> Home </p></a></li>
-        <li><a href="/tasks"><p> Task </p></a></li>
+        <li><a href="/pet"><p>Pets</p></a></li>
+        <li><a href="/vet"><p>Vets</p></a></li>
     </ul>
 </header>
+
 {% for vet in vet_staff %}
 {{vet.full_name}}
 {% endfor %}
 
-{% for pet in pet_patient %}
-{{pet.pets_name}}
-{% endfor %}
 {% endblock %}
