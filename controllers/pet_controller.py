@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect
 from flask import Blueprint
 import repositories.pet_repository as pet_repository
 import repositories.vet_repository as vet_repository
+from repositories.vet_repository import Vet
 from models.pet import Pet 
 
 pet_blueprint = Blueprint("pet", __name__)
@@ -13,7 +14,7 @@ def pet_list():
     return render_template("pet_list.html", pet_guest = pets, vet_staff = vets)
 
 
-@pet_blueprint.route("/vet")
+@pet_blueprint.route("/vet_list")
 def vet_list():
     pets = pet_repository.select_all()
     vets = vet_repository.select_all()
@@ -47,13 +48,12 @@ def add_pet_db():
 
 
 
-# @tasks_blueprint.route("/tasks",  methods=['POST'])
-# def create_task():
-#     description = request.form['description']
-#     user_id     = request.form['user_id']
-#     duration    = request.form['duration']
-#     completed   = request.form['completed']
-#     user        = user_repository.select(user_id)
-#     task        = Task(description, user, duration, completed)
-#     task_repository.save(task)
-#     return redirect('/tasks')
+@pet_blueprint.route('/add_new_vet', methods=['POST'])
+def add_vet_db():
+    full_name = request.form['full_name']
+    vet_class = Vet(full_name)
+    vet_repository.save(vet_class)
+    return redirect("/vet_list")
+
+
+

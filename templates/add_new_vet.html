@@ -3,13 +3,17 @@
     <ul>
         <li><a href="/"><p> Home </p></a></li>
         <li><a href="/pet"><p>Pets</p></a></li>
-        <li><a href="/vet"><p>Vets</p></a></li>
+        <li><a href="/vet_list"><p>Vets</p></a></li>
         <li><a href="/add_new_pet"><p>Add New Pet</p></a></li>
         <li><a href="/add_new_vet"><p>Add New Vet</p></a></li>
     </ul>
 </header>
 
-<div>
-    <label for="add_new_vet">Add New Vet:</label>
-    <input type="text" id="add_new_vet" name="add_new_vet" placeholder="enter in field" required autofocus>
-</div>
+<form action="/add_new_vet" method="POST">
+    <div>
+        <label for="full_name">Vets Name:</label>
+        <input type="text" id="full_name" name="full_name" placeholder="Full_Name" value="test"  required autofocus>
+    </div>
+    
+    <button type="submit">Add Vet</button>
+</form>
