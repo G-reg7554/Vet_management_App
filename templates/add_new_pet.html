@@ -8,40 +8,43 @@
         <li><a href="/add_new_vet"><p>Add New Vet</p></a></li>
     </ul>
 </header>
+<form action="/add_new_pet" method="POST">
+    <div>
+        <label for="pets_name">pets name:</label>
+        <input type="text" id="pets_name" name="pets_name" placeholder="Pet_Name" value="test"  required autofocus>
+    </div>
 
-        <form action="/tasks" method="post">
-            <div>
-              <label for="description">Pets Name:</label>
-              <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
+    <div>
+        <label for="date_of_birth">date_of_birth:</label>
+        <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Pet_Name" value="test"  required autofocus>
+    </div>
 
-            <div>
-                <label for="description">Date Of Birth:</label>
-                <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
+    <div>
+        <label for="pet_type">pet_type:</label>
+        <input type="text" id="pet_type" name="pet_type" placeholder="Pet_Name" value="test"  required autofocus>
+    </div>
 
-            <div>
-                <label for="description">Pet Type:</label>
-                <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
+    <div>
+        <label for="contact_number">contact_details:</label>
+        <input type="text" id="contact_number" name="contact_number" placeholder="Pet_Name" value="test"  required autofocus>
+    </div>
 
-            <div>
-                <label for="description">Contact Number:</label>
-                <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
+    <div>
+        <label for="treatment_notes">treatment_notes:</label>
+        <input type="text" id="treatment_notes" name="treatment_notes" placeholder="Pet_Name" value="test"  required autofocus>
+    </div>
 
-            <div>
-                <label for="description">Treatment Notes:</label>
-                <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
+    <div>
+        <label for="vet">vet:</label>
+        <select id="vet_id" name="vet_id">
+            {% for vet in vet_staff %}
+            <option value="{{ vet.id }}">{{ vet.full_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
 
-            <div>
-                <label for="description">Assigned Vet:</label>
-                <input type="text" id="description" name="description" placeholder="enter in field" required autofocus>
-            </div>
 
-          
 
-            <button type="submit">Add Pet</button>
-          
-          </form>
+    <button type="submit">Add Pet</button>
+
+</form>
