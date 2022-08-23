@@ -7,12 +7,17 @@
         <li><a href="/"><p> Home </p></a></li>
         <li><a href="/pet"><p>Pets</p></a></li>
         <li><a href="/vet"><p>Vets</p></a></li>
+        <li><a href="/add_new_pet"><p>Add New</p></a></li>
+        <li><a href="/add_new_vet"><p>Add New Vet</p></a></li>
+
     </ul>
 </header>
 
 
-{% for pet in pet_patient %}
-{{pet.pets_name}}
+{% for pet in pet_guest %}
+<ul>
+    <li>{{ pet.pets_name}}, {{ pet.date_of_birth }},{{ pet.pet_type }},{{ pet.contact_details}} {{ pet.treatment_notes }}, {{ pet.vet.full_name }}</li>
+</ul>
 {% endfor %}
 
 {% endblock %}

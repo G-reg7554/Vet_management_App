@@ -1,6 +1,3 @@
-{% extends "base.html" %}
-
-{% block body %}
 <header>
     <h1>Vet Manager</h1>
     <ul>
@@ -12,9 +9,7 @@
     </ul>
 </header>
 
-{% for vet in vet_staff %}
-<ul>
-    <li>{{vet.full_name }}</li>
-</ul>
-{% endfor %}
-{% endblock %}
+<div>
+    <label for="add_new_vet">Add New Vet:</label>
+    <input type="text" id="add_new_vet" name="add_new_vet" placeholder="enter in field" required autofocus>
+</div>

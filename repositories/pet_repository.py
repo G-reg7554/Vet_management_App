@@ -22,7 +22,8 @@ def select_all():
         vet = vet_repository.select(row['vet_id'])
         pet = Pet(row['pets_name'], row['date_of_birth'], row['pet_type'],row['contact_number'], row['treatment_notes'],vet, row['id'])
         pets.append(pet)
-        return pets
+    return pets
+
 
     
 
