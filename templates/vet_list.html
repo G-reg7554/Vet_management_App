@@ -17,6 +17,15 @@
 {% for vet in vet_staff %}
 <ul>
     <li>{{vet.full_name }}</li>
+    
 </ul>
+    
+    <form class="delete-form" action="vet/{{vet.id}}/delete" method="POST"> <!-- NEW -->
+        <button type="submit">Delete Vet</button> <!-- NEW -->
+    </form>
 {% endfor %}
 {% endblock %}
+
+
+
+<

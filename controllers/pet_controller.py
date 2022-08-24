@@ -69,24 +69,56 @@ def delete_pet(id):
 
 
 
+@pet_blueprint.route('/delete_vet')
+def dump_vet():
+    vet = vet_repository.select_all()
+    return render_template("/vet_list.html", vets = vet)
+
+
+@pet_blueprint.route("/vet/<id>/delete", methods=["POST"])
+def delete_vet(id):
+    vet_repository.delete(id)
+    return redirect('/vet_list')
+
+@pet_blueprint.route('/edit', methods=['GET'])
+def edit_route_pet():
+    return render_template('edit_pet.html')
+
+@pet_blueprint.route('/edit', methods=['POST'])
+def update_pet(id):
+    pets_name = request.form['pets_name']
+    pets_dob = request.form['date_of_birth']
+    pet_type = request.form['pet_type']
+    contact_number = request.form['contact_number']
+    treatment_notes = request.form['treatment_notes']
+    vet_id = request.form['vet_id']
+    vet       = vet_repository.select(vet_id)
+    pet_class = Pet(pets_name, pets_dob, pet_type, contact_number, treatment_notes, vet, id)
+    pet_repository.update(pet_class)
+    return render_template('edit_pet.html') ,redirect('/pet') 
 
 
 
 
 
 
-# @pet_blueprint.route("/pet<id>", methods=['POST'])
-# def add_pet_update():
-#     pets_name = request.form['pets_name']
-#     pets_dob = request.form['date_of_birth']
-#     pet_type = request.form['pet_type']
-#     contact_number = request.form['contact_number']
-#     treatment_notes = request.form['treatment_notes']
-#     vet_id = request.form['vet_id']
-#     vet       = vet_repository.select(vet_id)
-#     pet_class = Pet(pets_name, pets_dob, pet_type, contact_number, treatment_notes, vet)
-#     pet_repository.update(pet_class)
-#     return redirect('/pet')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
