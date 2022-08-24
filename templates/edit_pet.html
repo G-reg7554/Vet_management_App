@@ -1,0 +1,40 @@
+
+{% extends "base.html" %}
+{% block body %}
+
+<header>
+    <h1>Vet Manager</h1>
+    <ul>
+        <li><a href="/"><p> Home </p></a></li>
+        <li><a href="/pet"><p>Pets</p></a></li>
+        <li><a href="/vet_list"><p>Vets</p></a></li>
+        <li><a href="/add_new_pet"><p>Add New Pet</p></a></li>
+        <li><a href="/add_new_vet"><p>Add New Vet</p></a></li>
+        <li><a href="/edit"><p>Edit Pet</p></a></li>
+    </ul>
+    </header>
+
+<form action="/edit/{{pet_guest.id}}" method="post">
+    <div>
+    <label for="description">Description:</label>
+    <input type="text" id="description" name="description" value="{{pet_guest.pets_name}}" required autofocus>
+    </div>
+
+
+
+
+    <div>
+        <label for="user">User:</label>
+        <select id="user" name="user_id">
+            {% for vet in vet_staff %}
+            <option value="{{ vet.id }}">{{ vet.full_name }}</option>
+            {% endfor %}
+        </select>
+    </div>
+    
+
+    <button type="submit">Update Task</button>
+
+</form>
+
+{% endblock %}

@@ -51,7 +51,7 @@ def delete(id):
     run_sql(sql, values)
 
 
-# def update(task):
-#     sql = "UPDATE tasks SET (description, user_id, duration, completed) = (%s, %s, %s, %s) WHERE id = %s" # MODIFIED
-#     values = [task.description, task.user.id, task.duration, task.completed, task.id] # MODIFIED
-#     run_sql(sql, values)
+def update(pet):
+    sql = "UPDATE tasks SET (pets_name, date_of_birth, pet_type, contact_number, treatment_notes, vet_id) = (%s, %s, %s, %s, %s, %s) WHERE id = %s" # MODIFIED
+    values = [pet.pets_name, pet.date_of_birth, pet.pet_type, pet.contact_number, pet.treatment_notes, pet.vet.id] # MODIFIED
+    run_sql(sql, values)

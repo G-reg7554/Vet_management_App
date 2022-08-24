@@ -7,8 +7,9 @@
         <li><a href="/"><p> Home </p></a></li>
         <li><a href="/pet"><p>Pets</p></a></li>
         <li><a href="/vet_list"><p>Vets</p></a></li>
-        <li><a href="/add_new_pet"><p>Add New</p></a></li>
+        <li><a href="/add_new_pet"><p>Add New Pet</p></a></li>
         <li><a href="/add_new_vet"><p>Add New Vet</p></a></li>
+        <li><a href="/edit"><p>Edit Pet</p></a></li>
 
     </ul>
 </header>
@@ -18,6 +19,13 @@
 <ul>
     <li>{{ pet.pets_name}}, {{ pet.date_of_birth }},{{ pet.pet_type }},{{ pet.contact_details}} {{ pet.treatment_notes }}, {{ pet.vet.full_name }}</li>
 </ul>
-{% endfor %}
 
+
+<div class="buttons">
+
+    <form class="delete-form" action="/pet/{{pet.id}}/delete" method="POST"> <!-- NEW -->
+        <button type="submit">Delete Pet</button> <!-- NEW -->
+    </form>
+{% endfor %}
 {% endblock %}
+
