@@ -1,6 +1,7 @@
 {% extends "base.html" %}
-
+{% block head %}{% endblock %}
 {% block body %}
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
 <header>
     <h1>Vet Manager</h1>
     <ul>
@@ -13,18 +14,16 @@
 
     </ul>
 </header>
-
-
-{% for pet in pet_guest %}
+{% for pets in pet_guest %}
 <ul>
-    <li>{{ pet.pets_name}}, {{ pet.date_of_birth }},{{ pet.pet_type }},{{ pet.contact_details}} {{ pet.treatment_notes }}, {{ pet.vet.full_name }}</li>
+    <li>{{ pets.pets_name}}, {{ pets.date_of_birth }},{{ pets.pet_type }},{{ pets.contact_details}} {{ pets.treatment_notes }}, {{ pets.vet.full_name }}</li>
 </ul>
 
 
 <div class="buttons">
 
-    <form class="delete-form" action="/pet/{{pet.id}}/delete" method="POST"> <!-- NEW -->
-        <button type="submit">Delete Pet</button> <!-- NEW -->
+    <form class="delete-form" action="/pet/{{pets.id}}/delete" method="POST"> 
+        <button type="submit">Delete Pet</button> 
     </form>
 {% endfor %}
 {% endblock %}

@@ -1,3 +1,7 @@
+{% extends "base.html" %}
+{% block head %}{% endblock %}
+{% block body %}
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
 <header>
     <h1>Vet Manager</h1>
     <ul>
@@ -12,27 +16,27 @@
 <form action="/add_new_pet" method="POST">
     <div>
         <label for="pets_name">pets name:</label>
-        <input type="text" id="pets_name" name="pets_name" placeholder="Pet_Name" value="test"  required autofocus>
+        <input type="text" id="pets_name" name="pets_name" placeholder="Pet_Name" value="Fluffy"  required autofocus>
     </div>
 
     <div>
         <label for="date_of_birth">date_of_birth:</label>
-        <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Pet_Name" value="test"  required autofocus>
+        <input type="text" id="date_of_birth" name="date_of_birth" placeholder="Pet_Name" value="04/09/1902"  required autofocus>
     </div>
 
     <div>
         <label for="pet_type">pet_type:</label>
-        <input type="text" id="pet_type" name="pet_type" placeholder="Pet_Name" value="test"  required autofocus>
+        <input type="text" id="pet_type" name="pet_type" placeholder="Pet_Name" value="Cat"  required autofocus>
     </div>
 
     <div>
         <label for="contact_number">contact_details:</label>
-        <input type="text" id="contact_number" name="contact_number" placeholder="Pet_Name" value="test"  required autofocus>
+        <input type="text" id="contact_number" name="contact_number" placeholder="Pet_Name" value="0788568795"  required autofocus>
     </div>
 
     <div>
         <label for="treatment_notes">treatment_notes:</label>
-        <input type="text" id="treatment_notes" name="treatment_notes" placeholder="Pet_Name" value="test"  required autofocus>
+        <input type="text" id="treatment_notes" name="treatment_notes" placeholder="Pet_Name" value="Anti Depressants"  required autofocus>
     </div>
 
     <div>
@@ -43,9 +47,11 @@
             {% endfor %}
         </select>
     </div>
+    
 
 
 
     <button type="submit">Add Pet</button>
 
 </form>
+{% endblock %}

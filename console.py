@@ -11,7 +11,7 @@ vet_repository.delete_all()
 vet_1 = Vet('David Miller')
 vet_1_but_with_the_db_id = vet_repository.save(vet_1)
 
-vet_2 = Vet('Bruce Stuart')
+vet_2 = Vet('William Ferguson')
 vet_2_but_with_the_db_id = vet_repository.save(vet_2)
 
 vet_3 = Vet('Ross Davies')
@@ -35,7 +35,11 @@ pet_3 = Pet('Thumper', '02/10/2019', 'Rabbit', '07558458450', 'Needs cast for sp
 pet_3_but_with_the_db_id = pet_repository.save(pet_3)
 print(pet_3_but_with_the_db_id.__dict__)
 
-pet_4 = Pet('Steve', '15/01/2021', 'Dog', '07543853498', 'Needs shots', vet_4_but_with_the_db_id)
+pet_4 = Pet('Steve', '15/01/2021', 'Dog', '07543853498', 'Needs shot', vet_4_but_with_the_db_id)
+pet_4_but_with_the_db_id = pet_repository.save(pet_4)
+print(pet_4_but_with_the_db_id.__dict__)
+
+pet_4 = Pet('Roger', '15/01/2021', 'Rabbit', '07543853498', 'psychological counselling', vet_4_but_with_the_db_id)
 pet_4_but_with_the_db_id = pet_repository.save(pet_4)
 print(pet_4_but_with_the_db_id.__dict__)
 

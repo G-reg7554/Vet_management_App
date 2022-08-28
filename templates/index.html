@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-
+{% block head %}<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>{% endblock %}
 {% block body %}
 <header>
 <h1>Vet Manager</h1>
@@ -12,6 +12,11 @@
     <li><a href="/edit"><p>Edit Pet</p></a></li>
 </ul>
 </header>
+
+<body>
+    <img src="" alt="This Pic"
+
+</body>
 
 
 {% endblock %}

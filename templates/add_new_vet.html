@@ -1,3 +1,8 @@
+
+{% extends "base.html" %}
+{% block head %}{% endblock %}
+{% block body %}
+<head><link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}"></head>
 <header>
     <h1>Vet Manager</h1>
     <ul>
@@ -13,8 +18,11 @@
 <form action="/add_new_vet" method="POST">
     <div>
         <label for="full_name">Vets Name:</label>
-        <input type="text" id="full_name" name="full_name" placeholder="Full_Name" value="test"  required autofocus>
+        <input type="text" id="full_name" name="full_name" placeholder="Full_Name" value="Brian Smith"  required autofocus>
     </div>
     
     <button type="submit">Add Vet</button>
 </form>
+
+{% endblock %}
+
